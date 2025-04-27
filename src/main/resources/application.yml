@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: task-management-service
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 8192
+
+token:
+  ttl: 3600000
+  secret: "https://www.youtube.com/watch?v=VBUMYOYJISc"
+
+vars:
+  database-service-url: ${DATABASE_SERVICE_URL}
+  security:
+    enable: true

@@ -35,7 +35,7 @@ public class AuthService {
 
     public void registerWithoutFamilyId(RegisterRequestDto registerRequestDto) {
         ResponseEntity<Void> response = requestService.sendPostRequest(
-                "/auth/register",
+                "/authproxy/register",
                 Collections.emptyMap(),
                 registerRequestDto,
                 new ParameterizedTypeReference<>(){});
@@ -50,7 +50,7 @@ public class AuthService {
 
     public void registerWithFamilyId(RegisterWithFamilyIdRequestDto registerRequestDto) {
         ResponseEntity<Void> response = requestService.sendPostRequest(
-                "/auth/register/family-id",
+                "/authproxy/register/family-id",
                 Collections.emptyMap(),
                 registerRequestDto,
                 new ParameterizedTypeReference<>(){});
@@ -63,7 +63,7 @@ public class AuthService {
 
     public void login(LoginRequestDto loginRequestDto) {
         ResponseEntity<Void> response = requestService.sendPostRequest(
-                "/auth/login",
+                "/authproxy/login",
                 Collections.emptyMap(),
                 loginRequestDto,
                 new ParameterizedTypeReference<>(){});

@@ -35,7 +35,7 @@ public class SecurityConfiguration {
         http.csrf(AbstractHttpConfigurer::disable);
         if (securityEnabled) {
            http.authorizeHttpRequests(auth -> auth
-                   .requestMatchers("/auth/**",
+                   .requestMatchers("/authproxy/**",
                            "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                    .anyRequest().authenticated())
                    .exceptionHandling((exception)-> exception.authenticationEntryPoint(authEntryPoint))

@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/authproxy")
 public class AuthController implements SecuredRestController{
     @Autowired
     private AuthService authService;

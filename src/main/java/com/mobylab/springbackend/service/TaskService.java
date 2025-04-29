@@ -41,20 +41,6 @@ public class TaskService {
         return response.getBody();
     }
 
-    public List<TaskResponseDto> getByFamilyId(UUID familyId) {
-        ResponseEntity<List<TaskResponseDto>> response = requestService.sendGetRequest(
-                "/task/getByFamilyId",
-                Collections.singletonMap("familyId", familyId.toString()),
-                new ParameterizedTypeReference<>() {});
-
-        if (!response.getStatusCode().is2xxSuccessful()) {
-            logger.error("Request to find task by email failed.");
-            throw new TaskException("Request to find task by email failed.");
-        }
-
-        return response.getBody();
-    }
-
     public List<TaskResponseDto> getByCreatorId(UUID creatorId) {
         ResponseEntity<List<TaskResponseDto>> response = requestService.sendGetRequest(
                 "/task/getByCreatorId",

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.Collections;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -33,8 +34,8 @@ public class AuthService {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
 
-    public void registerWithoutFamilyId(RegisterRequestDto registerRequestDto) {
-        ResponseEntity<Void> response = requestService.sendPostRequest(
+    public UUID registerWithoutFamilyId(RegisterRequestDto registerRequestDto) {
+        ResponseEntity<UUID> response = requestService.sendPostRequest(
                 "/authproxy/register",
                 Collections.emptyMap(),
                 registerRequestDto,
@@ -45,7 +46,7 @@ public class AuthService {
             throw new AuthException("Register request failed.");
         }
 
-        System.out.println(response.getBody());
+        return response.getBody();
     }
 
     public void registerWithFamilyId(RegisterWithFamilyIdRequestDto registerRequestDto) {

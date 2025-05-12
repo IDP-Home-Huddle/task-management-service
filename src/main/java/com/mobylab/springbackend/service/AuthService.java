@@ -4,7 +4,6 @@ import com.mobylab.springbackend.service.dto.auth.LoginRequestDto;
 import com.mobylab.springbackend.service.dto.auth.RegisterRequestDto;
 import com.mobylab.springbackend.service.dto.auth.RegisterWithFamilyIdRequestDto;
 import com.mobylab.springbackend.exception.auth.AuthException;
-import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ import java.util.Collections;
 import java.util.UUID;
 
 @Service
-@Transactional
 public class AuthService {
     @Autowired
     private final RequestService requestService;

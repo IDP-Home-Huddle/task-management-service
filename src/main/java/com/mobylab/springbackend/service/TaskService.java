@@ -4,7 +4,6 @@ package com.mobylab.springbackend.service;
 import com.mobylab.springbackend.exception.entities.TaskException;
 import com.mobylab.springbackend.service.dto.entity.task.TaskRequestDto;
 import com.mobylab.springbackend.service.dto.entity.task.TaskResponseDto;
-import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@Transactional
 public class TaskService {
     @Autowired
     private final RequestService requestService;

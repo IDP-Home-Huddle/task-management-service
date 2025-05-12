@@ -16,7 +16,7 @@ import java.util.Map;
 public class RequestService {
     private final RestTemplate restTemplate;
 
-    @Value("${vars.task-management-service-url}")
+    @Value("${vars.database-service-url}")
     private String TASK_MANAGEMENT_SERVICE_URL;
 
     public RequestService() {

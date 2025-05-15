@@ -67,7 +67,7 @@ public class RequestService {
         HttpEntity<R> requestEntity = new HttpEntity<>(requestBody, headers);
 
         try {
-            return restTemplate.exchange(uri, HttpMethod.POST, requestEntity, responseType);
+            return restTemplate.exchange(uri, HttpMethod.PUT, requestEntity, responseType);
         } catch (HttpClientErrorException | HttpServerErrorException ex) {
             throw new RequestException(ex.getStatusCode(), ex.getMessage());
         }

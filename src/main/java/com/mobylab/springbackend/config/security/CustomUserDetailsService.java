@@ -26,7 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         ResponseEntity<UserDetailsResponseDto> response = requestService.sendGetRequest(
-                "/user/getDetailsByEmail",
+                "/userproxy/getByEmail",
                 Collections.singletonMap("email", email),
                 new ParameterizedTypeReference<>(){});
 
